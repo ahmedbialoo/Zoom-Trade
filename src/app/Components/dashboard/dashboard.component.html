@@ -1,0 +1,56 @@
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" ><img src="../../../assets/Images/shop.png" width="50px" height="50px" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+         
+          <li class="nav-item">
+            <a class="nav-link" >Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/LogOut">LogOut</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<div class="container mt-5 mb-5 p-5">
+    <a routerLink="/Add" class="btn btn-secondary mb-3">Add</a>
+  <table class="table table-bordered table-striped table-dark">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">ID</th>
+        <th scope="col"> Name</th>
+        <th scope="col">Catagory </th>
+        <th scope="col">Price(in USD) </th>
+        <th scope="col">Photo</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of products" class="text-center">
+        <td>{{x.Id}}</td>
+        <td>{{x.Name}}</td>
+        <td>{{x.Category}}</td>
+        <td>{{x.Price}}</td>
+        <td><img width="150px" height="100px" src="../../../assets/Images/{{x.Img}}"></td>
+        
+        <td>
+          <a class="btn btn-info mx-2" routerLink="/update/{{x.Id}}">Details</a>--
+          <a class="btn btn-danger mx-2" routerLink="/Delete/{{x.Id}}" (click)="DeleteProd(x.Id)">Delete</a>--
+          <a class="btn btn-primary mx-2" routerLink="/edit/{{x.Id}}">Edit</a>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+
+  <!-- <app-footer></app-footer> -->

@@ -1,0 +1,58 @@
+<div style="height: 1100px;background-color: #000000;
+background-image: linear-gradient(147deg, #000000 0%, #434343 74%);" class="bg-dark">
+    <br><br><br>
+    <div class="login-box bg-dark">
+        <h2>Registereration Form</h2>
+        <form (ngSubmit)="submitForm()" [formGroup]="ourValidation" style="margin-top: 50px;">
+            <div class="user-box">
+                <input type="text" [ngClass]="NameValid?'yes':'No'" formControlName="Username" name="Username" required="">
+                <div class="alert" style=" display: inline-block; color: white; font-size: small; font-size: 15px; font-family: Tahoma;" *ngIf="!NameValid">
+                    <span class="text-danger">**</span>Invalid Name<span class="text-danger">**</span></div>
+                <label>Name</label>
+
+            </div>
+            <div class="user-box">
+                <input type="password" [ngClass]="PasswordValid?'yes':'No'" formControlName="UserPassword" name="UserPassword" required="">
+                <div class="alert" style=" display: inline-block; color: white; font-size: small; font-size: 15px; font-family: Tahoma;" *ngIf="!PasswordValid">
+                    <span class="text-danger">**</span>Invalid Password<span class="text-danger">**</span></div>
+                <label>Password</label>
+
+            </div>
+            <div class="user-box">
+                <input type="text" [ngClass]="AddressValid?'yes':'No'" formControlName="UserAddress" name="UserAddress" required="">
+                <div class="alert" style=" display: inline-block; color: white; font-size: small; font-size: 15px; font-family: Tahoma;" *ngIf="!AddressValid">
+                    <span class="text-danger">**</span>Invalid Address<span class="text-danger">**</span></div>
+                <label>Address</label>
+            </div>
+            <div class="user-box">
+                <input type="email" [ngClass]="EmailValid?'yes':'No'" formControlName="UserEmail" name="UserEmail" required="">
+                <div class="alert" style=" display: inline-block; color: white; font-size: small; font-size: 15px; font-family: Tahoma;" *ngIf="!EmailValid">
+                    <span class="text-danger">**</span>Invalid Email<span class="text-danger">**</span></div>
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="tel" [ngClass]="PhoneNumberValid?'yes':'No'" formControlName="UserPhone" name="UserPhone" required="">
+                <div class="alert" style=" display: inline-block; color: white; font-size: small; font-size: 15px; font-family: Tahoma;" *ngIf="!PhoneNumberValid">
+                    <span class="text-danger">**</span>Invalid PhoneNumber<span class="text-danger">**</span></div>
+                <label>PhoneNumber</label>
+            </div>
+
+            <a *ngIf="NameValid && PasswordValid && AddressValid && EmailValid && PhoneNumberValid">
+                <input type="submit" style="background-color:transparent; border:none;" class="text-light">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <a>
+                <input type="button" value="Cancel" (click)="cancel()" style="background-color:transparent; border:none; margin-left: 30px;" class="text-light">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+
+        </form>
+    </div>
+</div>

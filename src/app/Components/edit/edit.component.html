@@ -1,0 +1,7 @@
+<h3>Old Price</h3>
+<input style="width:20%" type="number" value="{{product.Price}}" disabled>
+<hr>
+<h3>New Price</h3>
+<input style="width:20%"  placeholder="Enter the new price in USD" [(ngModel)]="Price" type="number">
+<hr>
+<button  type="submit" class="btn btn-danger" (click)="changePrice()">Save Change</button>

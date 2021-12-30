@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="container">
+<div >
+<div class="card" style="width:25%; margin: 6% 4%; " *ngFor="let x of products">
+  <img width  src="../../../assets/Images/{{x.Img}}" alt="{{x.Name}}" style="width:150px; height: 150px">
+  <h1>{{x.Name}}</h1>
+  <p class="price">{{x.Catagory}}</p>
+  <p><a routerLink="/update/{{x.Id}}"><button>{{x.Price}}$</button></a></p>
+</div>
+
+</div>
+</div>
+
+<app-footer></app-footer>
